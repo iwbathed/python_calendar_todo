@@ -3,7 +3,6 @@ import json
 
 from Enums.TaskEnum import TaskEnum
 from Settings import PROJECT_FOLDER, TASKS_FOLDER
-from Task import Task
 
 
 class FileCrud:
@@ -78,11 +77,4 @@ class FileCrud:
 
 
 
-    # Parse JSON
-    # x = '{ "name":"John", "age":30, "city":"New York"}'
-    # # parse x:
-    # y = json.loads(x)
-
-
-    # print(json.dumps({"name": "John", "age": 30}))
 
