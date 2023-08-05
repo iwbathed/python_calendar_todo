@@ -1,6 +1,6 @@
 import os
 
-from Settings import ID_FILE, PROJECT_FOLDER, TASKS_FOLDER, SERVICE_FOLDER
+from Settings import ID_FILE, PROJECT_FOLDER, SERVICE_FOLDER
 
 
 class Id:
