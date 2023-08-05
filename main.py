@@ -1,12 +1,11 @@
 # This is a sample Python script.
-from FileCrud import FileCrud
-from Enums.RepeatEnum import RepeatEnum
+from BasicFunctional.FileCrud import FileCrud
 from Enums.TaskEnum import TaskEnum
-from Enums.StatusEnum import StatusEnum
 from Task import Task
 from datetime import datetime
 
-from Terminal.TaskCrud import TaskCrud
+from BasicFunctional.TagCrud import TagCrud
+from BasicFunctional.TaskCrud import TaskCrud
 import pprint
 
 def main():
@@ -17,6 +16,9 @@ def main():
                        "Tasks for today - 3\nGet task by id - 4\n"
                        "Update task by id - 5\nDelete task by id - 6\n"
                        "Tasks for next 7 days - 7\n"
+                       "Create tag - 8\n"
+                       "All tags - 9\n"
+                       "Delete tag - 0\n"
                        "Exit - q\n")
         if choice == "1":
             TaskCrud.create_task(task)
@@ -63,6 +65,15 @@ def main():
                 print(f"No task with id {task_id} in {file_name}")
         elif choice == "7":
             pprint.pprint(TaskCrud.get_tasks_for_next_seven_days())
+        elif choice == "8":
+            tag_name = input("Input tag : ")
+            TagCrud.create_tag(tag_name)
+        elif choice == "9":
+            print(TagCrud.read_tags())
+        elif choice == "0":
+            tag_name = input("Delete tag : ")
+            TagCrud.delete_tag_from_file(tag_name)
+
         elif choice == "q":
             break
 
